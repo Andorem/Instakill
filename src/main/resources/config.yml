@@ -1,0 +1,11 @@
+# [Configuration file for Instakill by Nexamor]
+# By default, gives an ender pearl with name "Lethal Pearl" with lore "Kills all nearby mobs", right-click to kill all mobs within 25 blocks
+# Command to create item quickly: /ik give
+
+item-id: 368
+item-name: Lethal Pearl
+item-lore: 
+  - Kills all nearby mobs
+kill-radius: 25
+mob-drops: true
+consume-item: true
