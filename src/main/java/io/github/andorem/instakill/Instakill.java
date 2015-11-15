@@ -1,19 +1,11 @@
 package io.github.andorem.instakill;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -128,7 +120,6 @@ public class Instakill extends JavaPlugin {
 								}
 								debug("FROM " + senderName + ": Attempting to give " + numberOfItems + " of " + itemSectionName + " to " + recipient.getName(), "INFO");
 							
-							
 								if (itemListener.getKillItemSectionNames().contains(itemSectionName)) {
 									String itemName = itemListener.getItemConfig().getString(itemSectionName + ".name");
 									debug("FROM " + senderName + ": " + itemName + " found in 'items.yml' under section title '" + itemSectionName + "'", "INFO");
@@ -232,8 +223,6 @@ public class Instakill extends JavaPlugin {
 		debugEnabled = generalConfig.getBoolean("debug");
 	}
 	
-
-	
 	boolean isInt(String s) {
 		try {
 			int num = Integer.parseInt(s);
@@ -243,8 +232,6 @@ public class Instakill extends JavaPlugin {
 			return false;
 		}
 	}
-	
-	
 	
 	void debug(String debugMessage, String levelName) {
 		Level level = Level.parse(levelName.toUpperCase());
