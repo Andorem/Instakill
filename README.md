@@ -48,8 +48,9 @@ In order to create a custom Instakill item, you must set it up within the `items
 After setting up the item in the configuration file, give those who you wish to be able to use the item the `instakill.use.<item-name>` permission.
 
 ### config.yml
+
+General settings and default item options (for specific items, use items.yml)
 ```
-# General settings and default item options (for specific items, use items.yml)
 debug: false       # Sends debug info to console
 kill-radius: 20    # Kill all mobs within this radius of blocks
 mob-drops: true    # True or false. Should mobs drop items when instakilled?
@@ -57,9 +58,9 @@ consume-item: true # True or false. Should the item disappear after one use, or 
 ```
 
 ### items.yml
-```
-# To create an Instakill item, give it is own section in item.yml, including:
 
+To create an Instakill item, give it is own section in items.yml, including:
+```
 itemSectionTitle: # Used for /ik give command and permission names. Can be anything.
 id: ID # string. You can also use data values (e.g. enchanted golden apple = 322:1).
 name: Custom display name
