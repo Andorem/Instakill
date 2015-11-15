@@ -1,0 +1,36 @@
+# [Item configuration file for Instakill by Nexamor]
+# To create items quickly, use /ik give [user] [section-title] (amount). To list all item titles, use /ik list
+# ---------------------------------------------------------------------------------------------------
+# itemSectionTitle: # Used for /ik give command and permission names. Can be anything.
+#   id: ID # string. You can also use data values (e.g. enchanted golden apple = 322:1).
+#   name: Custom display name
+#   lore:
+#     - Lore descriptions must be in list format.
+#     - They can also be multiline.
+#   kill-radius: Optional. Range of blocks that mobs must be in to be instakilled.
+#   mob-drops: Optional. True or false. Should mobs drop items when instakilled?
+#   consume-item: Optional. True or false. Should the item disappear after used once?
+# ---------------------------------------------------------------------------------------------------
+# Each Instakill item has its own individual permission in order to use it. By default, it is set to false.
+# The permission name will be the custom item section title, no punctuation: "instakill.use.itemsection"
+# To let a player use all items, give them the permission: "instakill.use.*"
+
+# instakill.use.dstar (/ik give [user] dstar)
+# Defaults to one-time use and gives drops
+dstar:
+  id: '399'
+  name: Death Star
+  lore:
+    - One-time use.
+    - Instakills all nearby mobs.
+
+# instakill.use.staffodeath (/ik give [user] staffodeath)
+# Multiple use, gives no mob drops
+staffodeath:
+  id: '352'
+  name: Staff O' Death
+  lore:
+    - Right-click to remove mobs.
+  kill-radius: 30
+  mob-drops: false
+  consume-item: false

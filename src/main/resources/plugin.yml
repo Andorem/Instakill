@@ -1,20 +1,26 @@
 name: Instakill
 author: Nexamor
 main: io.github.andorem.instakill.Instakill
-version: 1.0.0
+version: 1.1.0
 description: Kill any mobs within configurable radius when right-clicking with specified item.
 
 commands:
    ik:
       description: Give an Instakill item to a specified player.
-      usage: '/ik give [username] [amount]'
+      usage: '/ik give [username] [item name] (amount)'
       alias: instakill
-      permission: instakill.use
       permission-message: You do not have permission to perform this command.
 
 permissions:
-   instakill.use:
-     description: Allows a player to use the specified item to instakill.
-   installkill.give:
+   instakill.use.*:
+     description: Allows a player to use the effects of all instakill items.
+     default: op
+   instakill.give:
      description: Give specified instakill item to a certain user.
+     default: op
+   instakill.list:
+     description: List the config IDs of any Instakill items a player has access to.
+     default: op
+   instakill.reload:
+     description: Reload general and item configuration files.
      default: op
