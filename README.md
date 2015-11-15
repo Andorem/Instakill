@@ -28,7 +28,7 @@ Right-click anywhere in-game while holding your item to instantly kill all mobs 
 
 All commands can also be executed with **/instakill**.
 
-* **/ik give [username] \[item name\] (amount)** - Instally gives the player one or more Instakill item. 
+* **/ik give [username] \[item name\] (amount)** - Instantly gives the player one or more Instakill item. 
 * **/ik list** - List all available Instakill items that you can use.
 * **/ik reload** - Reload the `config.yml` and `items.yml` configuration files.
 
