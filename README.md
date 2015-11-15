@@ -1,5 +1,5 @@
 # Instakill
-### *A fun small plugin for creating lethal items*
+### *A fun little plugin for creating custom lethal items*
 Version 1.0 compatibable with Bukkit 1.8+
 
 ## About
