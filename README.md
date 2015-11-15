@@ -78,4 +78,4 @@ To let a player use all items, give them the permission: "instakill.use.*"
 
 
 
-\[[Source Code](https://github.com/Andorem/NotifyUser)\]
+\[[Source Code](https://github.com/Andorem/Instakill)\]
