@@ -33,27 +33,66 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         
-              <script>  
-        // Markdown to HTML by @zeffii on github.com
-        var body_location = 'https://raw.githubusercontent.com/Andorem/Instakill/master/README.md';
-                
-        function getText(myUrl){
-            var result = null;
-            $.ajax( { url: myUrl, 
-                      type: 'get', 
-                      dataType: 'html',
-                      async: false,
-                      success: function(data) { result = data; } 
-                    }
-            );
-            FileReady = true;
-            return result;
-        }
-        var markdown_source = getText(body_location);
-        // convert markdown to html
-        var output = markdown.toHTML( markdown_source );
-        document.write(output);
-      </script>
+             <h3><em>A fun little plugin for creating custom lethal items</em></h3>
+<p>Version 1.x compatibable with Bukkit 1.8+</p>
+<h2>About</h2>
+<p>Instakill is a simple plugin that allows you to create custom items that will kill any nearby mobs within a certain radius when right-clicked. Customize the item name, lore, and whether or not it is single-use and the mobs will drop items.</p>
+<h2>Installing</h2>
+<ol>
+<li><strong>Download</strong> the latest Jar and place it in your server's plugin folder.</li>
+<li><strong>Restart</strong> your server to generate default configuration files <code>config.yml</code> and <code>items.yml</code>.</li>
+<li><strong>Customize</strong> the configuration's item ID, name, and lore, and kill options (See <a href="#setting-up">Setting up</a>).</li>
+</ol>
+<h2>How to use</h2>
+<h3>Obtaining an Instakill item</h3>
+<p>Any item created manually or using commands in-game that matches any set of custom name, lore, and ID will become a usable instakill item.</p>
+<p>Alternatively, you can give yourself or others one instantly with <code>/ik give</code> (Type <code>/ik list</code> to see available items).</p>
+<h3>Using the item's kill effects</h3>
+<p>Right-click anywhere in-game while holding your item to instantly kill all mobs near you (in a specified radius).</p>
+<h2>Commands</h2>
+<p>All commands can also be executed with <strong>/instakill</strong>.</p>
+<ul>
+<li><strong>/ik give [username] [item name] (amount)</strong> - Instally gives the player one or more Instakill item.</li>
+<li><strong>/ik list</strong> - List all available Instakill items that you can use.</li>
+<li><strong>/ik reload</strong> - Reload the <code>config.yml</code> and <code>items.yml</code> configuration files.</li>
+</ul>
+<h2>Permissions</h2>
+<ul>
+<li><strong>instakill.use.&lt;item-name&gt;</strong> - Allows you to use specific Instakill item by right-clicking.</li>
+<li><strong>instakill.use.</strong>* - Allows you to use all Instakill items.</li>
+<li><strong>instakill.give</strong> - Allows you to use the /ik give command.</li>
+<li><strong>instakill.list</strong> - Allows you to use the /ik list command.</li>
+<li><strong>instakill.reload</strong> - Allows you to use the /ik reload command.</li>
+</ul>
+<h2>Setting up</h2>
+<p><code>config.yml</code> contains general plugin settings and default values for Instakill items.</p>
+<p>In order to create a custom Instakill item, you must set it up within the <code>items.yml</code>. After editing and saving the file, either restart the server or type <code>/ik reload</code> to update the plugin's settings.</p>
+<p>After setting up the item in the configuration file, give those who you wish to be able to use the item the <code>instakill.use.&lt;item-name&gt;</code> permission.</p>
+<h3>config.yml</h3>
+<pre><code># General settings and default item options (for specific items, use items.yml)
+debug: false       # Sends debug info to console
+kill-radius: 20    # Kill all mobs within this radius of blocks
+mob-drops: true    # True or false. Should mobs drop items when instakilled?
+consume-item: true # True or false. Should the item disappear after one use, or stay in the inventory?
+</code></pre>
+<h3>items.yml</h3>
+<pre><code># To create an Instakill item, give it is own section in item.yml, including:
+
+itemSectionTitle: # Used for /ik give command and permission names. Can be anything.
+id: ID # string. You can also use data values (e.g. enchanted golden apple = 322:1).
+name: Custom display name
+lore:
+  - Lore descriptions must be in list format.
+  - They can also be multiline.
+kill-radius: Optional override of default set in config.yml.
+mob-drops: Optional override of default set in config.yml
+consume-item: Optional override of default set in config.yml
+</code></pre>
+<h4>Note on item permissions</h4>
+<p>Each Instakill item has its own individual permission in order to use it. By default, it is set to false.
+The permission name will be the custom item section title, no punctuation: "instakill.use.itemsection"
+To let a player use all items, give them the permission: "instakill.use.*"</p>
+<p>[<a href="https://github.com/Andorem/Instakill">Source Code</a>]</p>
 
       </section>
     </div>
